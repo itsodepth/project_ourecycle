@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project_ourecycle/pages/animated_navbar.dart';
-import 'package:project_ourecycle/pages/home_screen.dart';
 import 'package:project_ourecycle/pages/splash_screen.dart';
 
 void main() {
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
-      home: const AnimationBar(),
+      home: const SplashScreen(),
     );
   }
 }
