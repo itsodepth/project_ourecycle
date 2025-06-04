@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_ourecycle/pages/order_screen.dart';
 import 'package:project_ourecycle/pages/setting_screen.dart';
 import 'package:project_ourecycle/pages/transaksi_screen.dart';
 
@@ -19,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
       'info': '+900 Terbuang',
       'color': Color(0xFF079119),
       'imagePath': 'assets/ourecycle.png',
-      'harga': 3000,
     },
     {
       'nama': 'Plastik',
@@ -27,14 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
       'info': '+900 Terbuang',
       'color': Color(0xFF079119),
       'imagePath': 'assets/ourecycle.png',
-      'harga': 2500,
     },
     {
       'nama': 'Kaca',
       'icon': Icons.recycling,
       'info': '+900 Terbuang',
       'color': Color(0xFF079119),
-      'harga': 1500,
       'imagePath': 'assets/ourecycle.png',
     },
     {
@@ -42,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
       'icon': Icons.recycling,
       'info': '+900 Terbuang',
       'color': Color(0xFF079119),
-      'harga': 1000,
       'imagePath': 'assets/ourecycle.png',
     },
     {
@@ -50,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
       'icon': Icons.recycling,
       'info': '+750 Terbuang',
       'color': Color(0xFF079119),
-      'harga': 5000,
       'imagePath': 'assets/ourecycle.png',
     },
   ];
@@ -149,17 +145,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     final item = gridItems[index];
                     return GestureDetector(
                       onTap: () {
+                        // Aksi ketika item ditekan
+                        // Ganti dengan navigasi ke halaman yang sesuai
                         String name = item['nama'];
                         if (name == 'Kertas') {
-                          Get.to(() => SettingScreen());
+                          Get.to(() => OrderScreen());
                         } else if (name == 'Plastik') {
-                          Get.to(() => TransaksiScreen());
+                          Get.to(() => OrderScreen());
                         } else if (name == 'Kaca') {
-                          Get.to(() => SettingScreen());
+                          Get.to(() => OrderScreen());
                         } else if (name == 'Organik') {
-                          Get.to(() => TransaksiScreen());
+                          Get.to(() => OrderScreen());
                         } else if (name == 'Logam') {
-                          Get.to(() => SettingScreen());
+                          Get.to(() => OrderScreen());
                         }
                       },
                       child: Container(
