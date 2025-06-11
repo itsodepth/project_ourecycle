@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_ourecycle/widgets/text_field_register';
+import 'package:project_ourecycle/widgets/text_field_register.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
