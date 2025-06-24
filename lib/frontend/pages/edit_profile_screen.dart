@@ -76,7 +76,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             _buildTextField(
               "No. Telp",
               phoneController,
-            ), // <-- 2. Tambahkan controller untuk no. telp (jika ada)
+            ), // <-- 2. Tambahkan controller untuk no. telp
             _buildTextField(
               "Alamat",
               addressController,
@@ -86,7 +86,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
             ElevatedButton(
               onPressed: () {
-                // TODO: Simpan aksi
+                // buat nyimpen data nanti disini
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
@@ -105,7 +105,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
             OutlinedButton(
               onPressed: () {
-                // TODO: Aksi ubah password
+                // ini buat diarahin ke page ganti password
               },
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Colors.green),
