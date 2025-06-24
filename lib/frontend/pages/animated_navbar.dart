@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_ourecycle/pages/transaksi_screen.dart';
-import 'package:project_ourecycle/pages/setting_screen.dart';
-import 'package:project_ourecycle/pages/home_screen.dart';
+import 'package:project_ourecycle/frontend/pages/transaksi_screen.dart';
+import 'package:project_ourecycle/frontend/pages/setting_screen.dart';
+import 'package:project_ourecycle/frontend/pages/home_screen.dart';
 
 class AnimationBar extends StatefulWidget {
   const AnimationBar({super.key});
