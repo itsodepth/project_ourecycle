@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
                 return const AnimationBar(); // Halaman utama Anda
               }
               // Jika tidak ada data (user belum login), arahkan ke halaman login
-              return const LoginScreen(); // Ubah disini untuk testing fitur
+              return const LoginScreen(); // Ubah disini untuk testing fitur (sementara)
             },
           );
         },
