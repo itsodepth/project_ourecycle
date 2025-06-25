@@ -10,8 +10,11 @@ class TransaksiDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Helper untuk warna status
-    final statusColor = order.status == 'in-progress' ? Colors.orange.shade700 : Colors.green.shade700;
-    
+    final statusColor =
+        order.status == 'in-progress'
+            ? Colors.orange.shade700
+            : Colors.green.shade700;
+
     return Scaffold(
       backgroundColor: Colors.grey[100], // Beri sedikit warna background
       appBar: AppBar(
@@ -26,7 +29,9 @@ class TransaksiDetailScreen extends StatelessWidget {
           // --- KARTU STATUS ---
           Card(
             elevation: 2,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -43,17 +48,27 @@ class TransaksiDetailScreen extends StatelessWidget {
                       Chip(
                         label: Text(
                           order.status.toUpperCase(),
-                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
                         ),
                         backgroundColor: statusColor,
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 8),
                   Text(
                     order.wasteCategoryName,
-                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -66,16 +81,26 @@ class TransaksiDetailScreen extends StatelessWidget {
             title: 'Detail Pesanan',
             children: [
               _buildInfoRow(Icons.line_weight, 'Berat', '${order.weight} Kg'),
-              _buildInfoRow(Icons.delivery_dining, 'Tipe Pesanan', order.orderType),
+              _buildInfoRow(
+                Icons.delivery_dining,
+                'Tipe Pesanan',
+                order.orderType,
+              ),
             ],
           ),
           const SizedBox(height: 16),
-          
+
           // --- KARTU INFORMASI PENGIRIMAN ---
           _buildDetailCard(
             title: 'Informasi Pengantaran/Penjemputan',
             children: [
-              _buildInfoRow(Icons.calendar_today, 'Jadwal', DateFormat('EEEE, dd MMMM yyyy, HH:mm').format(order.scheduledAt)),
+              _buildInfoRow(
+                Icons.calendar_today,
+                'Jadwal',
+                DateFormat(
+                  'EEEE, dd MMMM yyyy, HH:mm',
+                ).format(order.scheduledAt),
+              ),
               _buildInfoRow(Icons.location_on, 'Alamat', order.address),
               _buildInfoRow(Icons.phone, 'No. Telepon', order.phoneNumber),
             ],
@@ -86,10 +111,23 @@ class TransaksiDetailScreen extends StatelessWidget {
           _buildDetailCard(
             title: 'Rincian Pendapatan',
             children: [
-              _buildInfoRow(Icons.receipt_long, 'Subtotal', 'Rp${(order.totalPrice - order.taxAmount).toStringAsFixed(0)}'),
-              _buildInfoRow(Icons.request_quote, 'Pajak (11%)', 'Rp${order.taxAmount.toStringAsFixed(0)}'),
+              _buildInfoRow(
+                Icons.receipt_long,
+                'Subtotal',
+                'Rp${(order.totalPrice - order.taxAmount).toStringAsFixed(0)}',
+              ),
+              _buildInfoRow(
+                Icons.request_quote,
+                'Biaya Aplikasi (11%)',
+                'Rp${order.taxAmount.toStringAsFixed(0)}',
+              ),
               const Divider(thickness: 1, height: 24),
-              _buildInfoRow(Icons.paid, 'Total Pendapatan', 'Rp${order.totalPrice.toStringAsFixed(0)}', isTotal: true),
+              _buildInfoRow(
+                Icons.paid,
+                'Total Pendapatan',
+                'Rp${order.totalPrice.toStringAsFixed(0)}',
+                isTotal: true,
+              ),
             ],
           ),
         ],
@@ -98,7 +136,10 @@ class TransaksiDetailScreen extends StatelessWidget {
   }
 
   // Widget baru untuk membuat kartu yang bisa digunakan kembali
-  Widget _buildDetailCard({required String title, required List<Widget> children}) {
+  Widget _buildDetailCard({
+    required String title,
+    required List<Widget> children,
+  }) {
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -107,7 +148,10 @@ class TransaksiDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 8),
             const Divider(),
             const SizedBox(height: 8),
@@ -119,7 +163,12 @@ class TransaksiDetailScreen extends StatelessWidget {
   }
 
   // Widget baru untuk membuat baris detail dengan ikon
-  Widget _buildInfoRow(IconData icon, String label, String value, {bool isTotal = false}) {
+  Widget _buildInfoRow(
+    IconData icon,
+    String label,
+    String value, {
+    bool isTotal = false,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Row(
@@ -127,7 +176,9 @@ class TransaksiDetailScreen extends StatelessWidget {
         children: [
           Icon(icon, color: Colors.green.shade700, size: 20),
           const SizedBox(width: 16),
-          Expanded(child: Text(label, style: TextStyle(color: Colors.grey.shade700))),
+          Expanded(
+            child: Text(label, style: TextStyle(color: Colors.grey.shade700)),
+          ),
           const SizedBox(width: 16),
           Expanded(
             flex: 2, // Beri ruang lebih untuk value
