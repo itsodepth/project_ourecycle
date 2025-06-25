@@ -100,25 +100,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
-
-            const SizedBox(height: 15),
-
-            OutlinedButton(
-              onPressed: () {
-                // ini buat diarahin ke page ganti password
-              },
-              style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: Colors.green),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: const EdgeInsets.symmetric(vertical: 14),
-              ),
-              child: const Text(
-                'Ubah Password',
-                style: TextStyle(color: Colors.green, fontSize: 16),
-              ),
-            ),
           ],
         ),
       ),
